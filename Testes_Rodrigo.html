@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Compras</title>
+    <link rel="stylesheet" href="Teste_Rodrigo_CSS.css">
+    <script src="Teste_Rodrigo_JAvaScript.js" defer></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="main-container">
+        <!-- Tela Inicial -->
+        <div id="initialScreen">
+            <header>
+                <h1>Bem-vindo ao Sistema de Lista de Compras</h1>
+            </header>
+        <div class="button-container">
+            <button>Entrar como Cliente</button>
+            <button>Entrar com Adm</button>
+        </div>
+    </div>
+        <!-- Tela de Login do Cliente -->
+        <div id="clientLoginScreen" class="hidden">
+            <header>
+                <h1>Login do Cliente</h1>
+                <button id="backToInitialBtn">Voltar</button>
+            </header>
+            <main>
+                <form id="clientLoginForm">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                    <input type="password" id="loginPassword" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+                <button id="goToRegisterBtn">Criar Conta</button>
+            </main>
+        </div>
+
+        <!-- Tela de Cadastro de Cliente -->
+        <div id="registerScreen" class="hidden">
+            <header>
+                <h1>Cadastro de Cliente</h1>
+                <button id="backToClientLoginBtn">Voltar</button>
+            </header>
+            <main>
+                <form id="registerForm">
+                    <input type="text" id="clientName" placeholder="Nome" required>
+                    <input type="email" id="clientEmail" placeholder="Email" required>
+                    <input type="password" id="clientPassword" placeholder="Senha" required>
+                    <button type="submit">Cadastrar</button>
+                </form>
+            </main>
+        </div>
+
+        <!-- Tela de Login do Administrador -->
+        <div id="adminLoginScreen" class="hidden">
+            <header>
+                <h1>Login de Administrador</h1>
+                <button id="backToInitialBtnAdmin">Voltar</button>
+            </header>
+            <main>
+                <form id="adminLoginForm">
+                    <input type="text" id="adminUser" placeholder="Usuário" required>
+                    <input type="password" id="adminPassword" placeholder="Senha" required>
+                    <button type="submit">Entrar</button>
+                </form>
+            </main>
+        </div>
+
+        <!-- Tela do Cliente -->
+        <div id="clientScreen" class="hidden">
+            <header>
+                <h1>Lista de Compras - Cliente</h1>
+                <button id="logoutClient">Sair</button>
+            </header>
+            <main>
+                <section class="add-item">
+                    <h2>Adicionar Item</h2>
+                    <form id="addItemForm">
+                        <input type="text" id="itemName" placeholder="Nome do item" required>
+                        <input type="number" id="itemQuantity" placeholder="Quantidade" required>
+                        <select id="itemCategory" required>
+                            <option value="frutas">Frutas</option>
+                            <option value="vegetais">Vegetais</option>
+                            <option value="laticínios">Laticínios</option>
+                            <option value="carnes">Carnes</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <div id="clientMeatOptions" class="hidden">
+                            <label for="clientMeatSelection">Selecionar Tipo de Carne:</label>
+                            <select id="clientMeatSelection">
+                                <option value="alcatra">Alcatra</option>
+                                <option value="coxaomole">Coxão Mole</option>
+                                <option value="picanha">Picanha</option>
+                                <option value="frango">Frango</option>
+                                <option value="linguicinha">Linguicinha</option>
+                            </select>
+                        </div>
+                        <button type="submit">Adicionar</button>
+                    </form>
+                </section>
+                <section class="shopping-list">
+                    <h2>Lista de Compras</h2>
+                    <ul id="shoppingList">
+                        <!-- Itens serão adicionados aqui -->
+                    </ul>
+                    <button id="saveListBtn">Salvar Lista</button>
+                    <button id="viewHistoryBtn">Ver Histórico</button>
+                    <button id="shareListBtn">Compartilhar Lista</button>
+                </section>
+            </main>
+        </div>
+
+        <!-- Tela do Administrador -->
+        <div id="adminScreen" class="hidden">
+            <header>
+                <h1>Administração da Lista de Compras</h1>
+                <button id="logoutAdmin">Sair</button>
+            </header>
+            <main>
+                <section class="admin-add-item">
+                    <h2>Adicionar Novo Produto - Geral</h2>
+                    <form id="adminAddItemForm">
+                        <input type="text" id="adminItemName" placeholder="Nome do Produto" required>
+                        <input type="number" id="adminItemPrice" placeholder="Preço" step="0.01" required>
+                        <select id="adminItemCategory" required>
+                            <option value="frutas">Frutas</option>
+                            <option value="vegetais">Vegetais</option>
+                            <option value="laticínios">Laticínios</option>
+                            <option value="carnes">Carnes</option>
+                            <option value="outros">Outros</option>
+                        </select>
+                        <div id="clientScreen" class="hidden">
+                            <h2>Recomendações de Compras</h2>
+                            <div id="recommendations">
+                                <!-- Recomendações serão adicionadas aqui pelo JavaScript -->
+                            </div>
+                        </div>
+                        <div id="adminMeatOptions" class="hidden">
+                            <label for="adminMeatSelection">Selecionar Tipo de Carne:</label>
+                            <select id="adminMeatSelection">
+                                <option value="alcatra">Alcatra</option>
+                                <option value="coxaomole">Coxão Mole</option>
+                                <option value="picanha">Picanha</option>
+                                <option value="frango">Frango</option>
+                                <option value="linguicinha">Linguicinha</option>
+                            </select>
+                        </div>
+                        <button type="submit">Adicionar Produto</button>
+                    </form>
+                </section>
+                
+                <section class="admin-products-list">
+                    <h2>Produtos Disponíveis</h2>
+                    <ul id="productsList">
+                        <!-- Lista de produtos será adicionada aqui -->
+                    </ul>
+                </section>
+            </main>
+        </div>
+
+        <div id="historyScreen" class="hidden">
+            <header>
+                <h1>Histórico de Compras</h1>
+                <button id="backToClientBtn">Voltar</button>
+            </header>
+            <!-- Conteúdo do histórico vai aqui -->
+        </div>
+</body>
+</html>

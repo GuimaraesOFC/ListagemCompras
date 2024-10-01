@@ -1,0 +1,27 @@
+name: Teste do Bot do Telegram
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Configurar Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14' # ou a versão que você está usando
+
+    - name: Instalar dependências
+      run: npm install
+
+    - name: Executar teste do bot
+      run: node .github/workflows/teste.bot.js
+      env:
+        TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }} # Certifique-se de que o token foi adicionado aos secrets do GitHub

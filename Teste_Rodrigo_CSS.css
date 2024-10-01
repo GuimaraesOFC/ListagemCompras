@@ -1,0 +1,110 @@
+/* Estilos gerais da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Garante que o corpo ocupe toda a altura da janela */
+    background-color: #e8f5e9; /* Cor de fundo suave que remete a frescor e limpeza */
+    padding: 20px; /* Garante espaçamento ao redor da tela central */
+}
+
+/* Container principal da tela central */
+.container {
+    background-color: white; /* Cor de fundo do container */
+    padding: 30px; /* Espaçamento interno */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada para destacar */
+    border-radius: 12px; /* Bordas arredondadas mais suaves */
+    max-width: 800px; /* Limita a largura máxima do container */
+    width: 100%; /* Garante que ocupe toda a largura disponível */
+}
+
+/* Estilos do cabeçalho da tela principal */
+header {
+    margin-bottom: 30px; /* Espaço abaixo do cabeçalho */
+    text-align: center; /* Centraliza o texto do cabeçalho */
+    font-size: 24px; /* Aumenta o tamanho da fonte do cabeçalho */
+    color: #388e3c; /* Cor verde para o cabeçalho, que remete a temas naturais */
+}
+
+/* Estilos para os botões de ação na tela central */
+button {
+    margin-right: 10px; /* Espaço entre os botões */
+    padding: 10px 20px; /* Aumenta o espaçamento interno dos botões */
+    font-size: 16px; /* Aumenta o tamanho da fonte dos botões */
+    border-radius: 5px; /* Bordas arredondadas dos botões */
+    background-color: #66bb6a; /* Cor de fundo dos botões, verde suave */
+    color: white; /* Cor do texto dos botões */
+    border: none; /* Remove a borda padrão */
+    cursor: pointer; /* Muda o cursor para pointer ao passar por cima */
+}
+
+button:hover {
+    background-color: #388e3c; /* Cor de fundo dos botões ao passar o mouse */
+}
+
+/* Estilos específicos para os botões de Remover e Editar */
+button.remover, button.editar {
+    font-size: 0.8em; /* Ajusta o tamanho da fonte */
+    padding: 5px 10px; /* Ajusta o espaçamento interno */
+}
+
+/* CSS para centralizar os três botões na parte inferior */
+div.bottom-buttons {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    gap: 10px; /* Espaço entre os botões */
+    margin-top: 20px; /* Espaço acima do container de botões */
+}
+
+/* Container para os botões de entrada na tela principal */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Espaçamento acima do container de botões */
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+/* Estilos gerais para ícones de navegação em menus */
+.icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 20px; /* Espaço entre os ícones */
+    transition: transform 0.3s ease;
+}
+
+/* Estilos para imagens de ícones nos menus */
+.icon img {
+    width: 80px; /* Tamanho maior dos ícones */
+    height: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Torna as transições suaves */
+    border-radius: 10px; /* Arredonda os cantos do ícone */
+}
+
+/* Estilos para o texto abaixo dos ícones nos menus */
+.icon p {
+    margin-top: 12px; /* Mais espaço acima do texto */
+    font-size: 18px; /* Aumenta o tamanho da fonte */
+    color: #555; /* Cor neutra para o texto */
+    transition: color 0.3s ease; /* Transição suave para a cor */
+}
+
+/* Efeito de hover para as imagens de ícones nos menus */
+.icon:hover img {
+    transform: translateY(-10px) scale(1.1); /* Move o ícone para cima e aumenta seu tamanho */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Sombra mais forte no hover */
+}
+
+/* Efeito de hover para o texto abaixo dos ícones nos menus */
+.icon:hover p {
+    color: #2e7d32; /* Cor verde escuro para o texto ao passar o mouse */
+}
+
+/* Container para os produtos na tela de lista de produtos */
+.produtos-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px; /* Espaço entre os produtos */
+    justify-content: center;
+}
